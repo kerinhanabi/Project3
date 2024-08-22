@@ -1,0 +1,52 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <title>v-on:input=Notebook Example</title>
+
+    <style>
+        #app {
+          border: black dashed 1px;
+          width: 300px;
+          padding: 20px;
+        }
+        #app > div {
+          width: 100%;
+          position: relative;
+          margin-top: 10px;
+          aspect-ratio: 1;
+          background-image: url("assets/img_notebook.jpg");
+          background-size: 340%;
+          background-position: -345px 0;
+          overflow: hidden;
+        }
+        #app span {
+          width: 80%;
+          font-weight: bold;
+          font-family: 'Courier New', Courier, monospace;
+          line-height: 1.2em;
+          transform-origin: 0 0;
+          rotate: 33deg;
+          position: absolute;
+          top: 50px;
+          left: 70px;
+        }
+        #app textarea {
+          width: 100%;
+          box-sizing: border-box;
+        }
+      </style>
+</head>
+<body>
+    <h1>v-on:input-Notebook Example</h1>
+
+    <div id="app">
+    <textarea v-on:input="writeText" rows="8" cols="30" placeholder="Start writing.."></textarea>
+    <div>
+        <span>{{ text }}</span>
+    </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
